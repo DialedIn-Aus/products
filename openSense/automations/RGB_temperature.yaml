@@ -1,0 +1,70 @@
+blueprint:
+  name: RGB Temperature
+  description: |
+    Display current temperature on RGB light, using a hue scale from blue (cold) through red (hot)
+    Dialedin -- v0.1.0
+  domain: automation
+  source_url: https://github.com/darkxst/hascripts/blob/main/config/blueprints/automation/RGB_Temperature.yaml
+  input:
+    sensor_id:
+      name: Temperature Sensor
+      description: sensor to monitor temperature
+      selector:
+        entity:
+          domain: sensor
+    rgb_id:
+      name: RGB Device
+      description: RGB LED to display current temperature
+      selector:
+        entity:
+          domain: light
+    rgbBrightness:
+      name: RGB Brightness
+      default: 160
+      selector:
+        number:
+          min: 0
+          max: 255
+          mode: slider
+    rgbSetTemp:
+      name: Set Temperature
+      description: Mid-point temperature, displays green
+      default: 20
+      selector:
+        number:
+          min: 0
+          max: 60
+          unit_of_measurement: "°C"
+    rgbDelta:
+      name: RGB Delta
+      description: Temperature range for display, this value will be added/substracted from the Set Temperature
+      default: 4
+      selector:
+        number:
+          min: 2
+          max: 10
+          unit_of_measurement: "°C"
+
+variables:
+  rgb_target: !input rgb_id
+
+trigger:
+  - platform: state
+    entity_id:
+      - !input sensor_id
+
+condition: "{{ is_state(rgb_target, 'on') }}"
+
+action:
+  - variables:
+      TCurrent: "{{ trigger.to_state.state | float }}"
+      TSet: !input rgbSetTemp
+      Rd: !input rgbDelta
+      hue: "{{ -240/(Rd*2) * (TCurrent - TSet - Rd) }}"
+      hlim: "{{ ([0,hue|round,240]|sort)[1] }}"
+  - service: light.turn_on
+    data:
+      brightness: !input rgbBrightness
+      hs_color: "[{{ hlim }}, 100]"
+      entity_id: !input rgb_id
+
