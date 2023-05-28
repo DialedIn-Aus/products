@@ -4,7 +4,7 @@ blueprint:
     Display current temperature on RGB light, using a hue scale from blue (cold) through red (hot)
     Dialedin -- v0.1.0
   domain: automation
-  source_url: https://github.com/darkxst/hascripts/blob/main/config/blueprints/automation/RGB_Temperature.yaml
+  source_url: https://github.com/DialedIn-Aus/products/blob/main/openSense/automations/RGB_temperature.yaml
   input:
     sensor_id:
       name: Temperature Sensor
