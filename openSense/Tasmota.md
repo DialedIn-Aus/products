@@ -31,7 +31,7 @@ TempRes 2
 
 `ADC` need to be [range calibrated](https://tasmota.github.io/docs/ADC/#commands), for example 5" eTape: [not tested]
 ```python
-AdcParam2 6 300 663 125  25
+AdcParam1 6 300 663 125  25
 ```
 
 ### Matter

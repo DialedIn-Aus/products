@@ -60,7 +60,7 @@ Modules can easily be placed by hand soldering.
 
 * WT32C3-S5 [ESP32-C3]
 * ESP8585-WROOM-01 [ESP32-C3]
-* ESP-12E, ESP-12F, WT8266-S5 [ESP8266]
+* ESP-12E, ESP-12F, ESP-07(S), WT8266-S5 [ESP8266]
 * ESP-12S, WT8266-S6 [ESP8266]
 * ESP8684-WROOM-01 [ESP32-C2] (requires esp-idf v5.1, not supported by other platforms yet)
 * ESP-C3-12F [ESP32-C3] (Not recommended) 
