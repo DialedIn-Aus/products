@@ -1,0 +1,54 @@
+dallas:
+  - pin: 2
+
+i2c:
+  sda: 3
+  scl: 10
+
+# uart:
+#   tx_pin: 21
+#   rx_pin: 20
+#   baud_rate: 9600
+
+light:
+- platform: neopixelbus
+  variant: WS2812
+  pin: GPIO8
+  num_leds: 1
+  name: "RGB Light"
+
+sensor:
+  - platform: bme280
+    temperature:
+      name: "BME280 Temperature"
+      oversampling: 16x
+    pressure:
+      name: "BME280 Pressure"
+    humidity:
+      name: "BME280 Humidity"
+    address: 0x77
+    update_interval: 60s
+  - platform: sht4x
+    temperature:
+      name: "sht4x Temperature"
+      id: sht_temp
+    humidity:
+      name: "sht4x  Humidity"
+  # find the address in logs after boot
+  - platform: dallas
+    address: 0x3f3c01f0967ceb28
+    name: "ds18b20 Temperature"
+
+font:
+  - file: "gfonts://Roboto"
+    id: my_font
+    size: 16
+
+display:
+  - platform: ssd1306_i2c
+    model: "SSD1306 128x64"
+    address: 0x3C
+    lambda: |-
+      it.print(it.get_width()/2, 0, id(my_font), TextAlign::TOP_CENTER, "DialedIn");
+      it.line(0, 20, 128, 20);
+      it.printf(it.get_width()/2, 24, id(my_font), TextAlign::TOP_CENTER, "Temp: %.1f", id(sht_temp).state);
