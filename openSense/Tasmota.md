@@ -8,8 +8,8 @@ Template for ESP32-C3
 ```
 
 Template for ESP8266
-```
-TBC
+```JSON
+{"NAME":"Open Sense","GPIO":[32,1,1376,1,608,640,0,0,1,1,1,1,1312,4864],"FLAG":0,"BASE":18}
 ```
 ### MQTT
 

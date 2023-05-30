@@ -34,7 +34,7 @@ A compact breakout board meticulously crafted to provide the perfect foundation 
 | SCL |	Qwiic |	GPIO10 | GPIO4
 | DQ |	1-wire |	GPIO2 | GPIO16
 | ADC2 | eTape	| GPIO0 | N/A
-| ADC1	| eTape	| GPIO1 | ADC
+| ADC1	| eTape	| GPIO1 | GPIO17, ADC
 | LED |	RGB	 | GPIO8 | GPIO2
 | Boot Button |	Button |	GPIO9 | GPIO0
 
