@@ -38,6 +38,16 @@ sensor:
   - platform: dallas
     address: 0x3f3c01f0967ceb28
     name: "ds18b20 Temperature"
+  - platform: adc
+    pin: 0
+    name: "ADC2"
+    update_interval: 60s
+    attenuation: auto
+  - platform: adc
+    pin: 1
+    name: "ADC1"
+    update_interval: 60s
+    attenuation: auto
 
 font:
   - file: "gfonts://Roboto"
