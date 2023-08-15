@@ -41,10 +41,10 @@ A compact breakout board meticulously crafted to provide the perfect foundation 
 
 ## Software
 
-If you purchased this board with the `WT32C3-S5` included, it will come with a custom build of [Tasmota](Tasmota/README.md) installed. This has been preconfigured with most sensors, support for mini OLED displays such as SSH1106 and also includes experimental support for the Matter protocol. 
+If you purchased this board with the `WT32C3-S5` included, it will come with a custom build of [Tasmota](Tasmota/README.md) installed. This has been preconfigured based on above table, ready for most sensors, includes support for mini OLED displays such as SSD1306/SSH1106 and also includes Matter support. 
 
 Details for Tasmota support including templates and firmware builds are in this [Folder](Tasmota)  
-Example configuration for ESPHome [ESPHome.yaml](esphome.WT32C3.yaml)
+Example configuration for ESPHome [ESPHome.yaml](ESPHome/esphome.WT32C3.yaml)
 
 In addition to Tasmota there are plenty of other platforms that will work great with this module. There is something for everyone here from writing custom code to configuration with a fully GUI controlled setup.
 * [Arduino IDE & Sketches](https://docs.arduino.cc/software/ide-v2)
@@ -63,8 +63,8 @@ Modules can easily be placed by hand soldering.
 
 * WT32C3-S5 [ESP32-C3]
 * ESP8585-WROOM-01 [ESP32-C3]
-* ESP-12E, ESP-12F, ESP-07(S), WT8266-S5 [ESP8266] [^1]
-* ESP-12S, WT8266-S6 [ESP8266]
+* ESP-12E, ESP-12F, WT8266-S5 [ESP8266] [^1]
+* ESP-07(S), ESP-12S, WT8266-S6 [ESP8266]
 * ESP8684-WROOM-01 [ESP32-C2] (requires esp-idf v5.1, not supported by other platforms yet)
 * ESP-12H [ESP32-S2]
 * ESP-C3-12F [ESP32-C3] (Not recommended) 
