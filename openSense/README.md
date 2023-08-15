@@ -5,7 +5,7 @@ A compact breakout board meticulously crafted to provide the perfect foundation 
 
 <p align="middle">
     <img src="images/c3-breakout1.jpeg" alt="product image" width="400px" />
-    <img src="images/c3-breakout-solder-back.png" alt="product back" width="400px" />
+    <img src="images/c3-breakout3.jpeg" alt="product back" width="400px" />
 </p>
 
 
@@ -23,7 +23,7 @@ A compact breakout board meticulously crafted to provide the perfect foundation 
 - 1.27mm pin header with 4x GPIO (JTAG support on compatible modules)
 
 <p align="center">
-    <img src="images/c3-breakout-pins.png" alt="product pinout" width="600px" />
+    <img src="images/c3-opensense-pinout.jpg" alt="product pinout" width="600px" />
 </p>
 
 |  Function  | Connector | IO (ESP32-C3) | IO (ESP8266) |
@@ -33,7 +33,7 @@ A compact breakout board meticulously crafted to provide the perfect foundation 
 | SDA |	Qwiic |	GPIO3 | GPIO5
 | SCL |	Qwiic |	GPIO10 | GPIO4
 | DQ |	1-wire |	GPIO2 | GPIO16
-| ADC2 | eTape	| GPIO0 | N/A
+| ADC2 | eTape	| GPIO0 | N/A, RST
 | ADC1	| eTape	| GPIO1 | GPIO17, ADC
 | LED |	RGB	 | GPIO8 | GPIO2
 | Boot Button |	Button |	GPIO9 | GPIO0
@@ -41,7 +41,10 @@ A compact breakout board meticulously crafted to provide the perfect foundation 
 
 ## Software
 
-If you purchased this board with the `WT32C3-S5` included, it will come with a custom build of [Tasmota](Tasmota.md) installed. This has been preconfigured with most sensors, support for mini OLED displays such as SSH1106 and also includes experimental support for the Matter protocol. 
+If you purchased this board with the `WT32C3-S5` included, it will come with a custom build of [Tasmota](Tasmota/README.md) installed. This has been preconfigured with most sensors, support for mini OLED displays such as SSH1106 and also includes experimental support for the Matter protocol. 
+
+Details for Tasmota support including templates and firmware builds are in this [Folder](Tasmota)  
+Example configuration for ESPHome [ESPHome.yaml](esphome.WT32C3.yaml)
 
 In addition to Tasmota there are plenty of other platforms that will work great with this module. There is something for everyone here from writing custom code to configuration with a fully GUI controlled setup.
 * [Arduino IDE & Sketches](https://docs.arduino.cc/software/ide-v2)
@@ -54,7 +57,7 @@ In addition to Tasmota there are plenty of other platforms that will work great 
 
 
 ## Compatible Modules
-The following modules are compatible with this board. Not all features supported on ESP8266 modules. Some modules require some additional soldering (see [datasheet](OpenSense_datasheet_v1.0.0.pdf)).
+The following modules are compatible with this board. Not all features supported on ESP8266 modules. Some modules require some additional soldering (see [datasheet](OpenSense_datasheet_v1.0.1.pdf)).
 
 Modules can easily be placed by hand soldering.
 
@@ -63,6 +66,7 @@ Modules can easily be placed by hand soldering.
 * ESP-12E, ESP-12F, ESP-07(S), WT8266-S5 [ESP8266] [^1]
 * ESP-12S, WT8266-S6 [ESP8266]
 * ESP8684-WROOM-01 [ESP32-C2] (requires esp-idf v5.1, not supported by other platforms yet)
+* ESP-12H [ESP32-S2]
 * ESP-C3-12F [ESP32-C3] (Not recommended) 
 
-[^1]: These modules require removing 2 resistors and applying solder bridge, see datasheet for details.
+[^1]: These modules require removing 2 resistors and applying a solder bridge on JP1, see [datasheet](OpenSense_datasheet_v1.0.1.pdf) for details.
