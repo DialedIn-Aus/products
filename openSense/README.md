@@ -1,6 +1,6 @@
 # Dialedin - Open Sense Module (DI-OSM1)
 
-A compact breakout board meticulously crafted to provide the perfect foundation for creating sensor-based modules using open automation platforms like Tasmota, ESPHome or ESPEasy. Its compact design ensures stability and reliability, setting it apart from other development kits on the market.
+A compact breakout board meticulously crafted to provide the perfect foundation for creating sensor-based modules using open automation platforms like Tasmota, ESPHome or ESPEasy allowing for easy integration with Home Assistant or other smart home platforms. Its compact design ensures stability and reliability, setting it apart from other development kits on the market.
 
 
 <p align="middle">
@@ -13,9 +13,9 @@ A compact breakout board meticulously crafted to provide the perfect foundation 
 
 - Compatible with most SMD-22 and SMD-16 ESP modules
 - 2x QWIIC/StemmaQT I2C connectors
-- Grove UART connector (optionally I2C)
+- Grove UART connector (selectable voltage 3v3 or 5v)
 - 1-wire connector (for sensors such as DS18B20 probes)
-- 2x ADC inputs setup for resistive sensors such as thermistors or [eTape](https://milonetech.com/products/standard-etape-assembly)
+- 2x ADC inputs setup for resistive sensors such as thermistors, LDRs or [eTape](https://milonetech.com/products/standard-etape-assembly)
 - on-board WS2812B RGB LED
 - 1x User Programmable Button
 - 1x Reset Button
@@ -41,7 +41,7 @@ A compact breakout board meticulously crafted to provide the perfect foundation 
 
 ## Software
 
-If you purchased this board with the `WT32C3-S5` included, it will come with a custom build of [Tasmota](Tasmota/README.md) installed. This has been preconfigured based on above table, ready for most sensors, includes support for mini OLED displays such as SSD1306/SSH1106 and also includes Matter support. 
+If you purchased this board with the `WT32C3-S5` included, it will come with a custom build of [Tasmota](Tasmota/README.md) installed. This has been preconfigured based on above table, ready for most sensors, includes support for mini OLED displays such as SSD1306/SSH1106 and also includes Matter support. Matter support allows this device to integrate directly with Amazon, Apple or Google Home systems without the need for Home Assistant (not all sensors will be supported in this configuration though).
 
 Details for Tasmota support including templates and firmware builds are in this [Folder](Tasmota)  
 Example configuration for ESPHome [ESPHome.yaml](ESPHome/esphome.WT32C3.yaml)
