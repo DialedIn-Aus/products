@@ -1,11 +1,11 @@
-# Open Sense Module
+# Dialedin - Open Sense Module (DI-OSM1)
 
 A compact breakout board meticulously crafted to provide the perfect foundation for creating sensor-based modules using open automation platforms like Tasmota, ESPHome or ESPEasy. Its compact design ensures stability and reliability, setting it apart from other development kits on the market.
 
 
 <p align="middle">
-    <img src="images/c3-breakout1.jpeg" alt="product image" width="400px" />
-    <img src="images/c3-breakout3.jpeg" alt="product back" width="400px" />
+    <img src="images/c3-opensense1.jpeg" alt="product image" width="400px" />
+    <img src="images/c3-opensense3.jpeg" alt="product back" width="400px" />
 </p>
 
 
